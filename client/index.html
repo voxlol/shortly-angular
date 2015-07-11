@@ -7,9 +7,15 @@
   </head>
   <body>
     <h1>Shortly</h1>
-
+    <ul ng-controller="AuthController">
+      <li><a href='#/links'>All links</a></li>
+      <li><a href="#/shorten">Shorten</a></li>
+      <li ng-if="!isAuth()"><a href="#/signin">Sign in</a></li>
+      <li ng-if="isAuth()" ng-click="signout()">Logout</li>
+    </ul>
     <!-- the ng-view directive is where our templates will be loaded into when navigated to -->
-    <div ng-view></div>
+    <div ng-view>
+    </div>
 
     <script src="lib/angular/angular.js"></script>
     <script src="lib/angular-route/angular-route.js"></script>

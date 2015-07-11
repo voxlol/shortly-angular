@@ -22,6 +22,13 @@ module.exports = function (app, express) {
   app.use(helpers.errorLogger);
   app.use(helpers.errorHandler);
 
+  app.use('/*', function(req, res, next){
+    var code = req.params[0];
+    res.redirect('/api/links/'+code);
+    // req.path = '/api/links/code'
+  }, linkRouter)
+  // check the url, see if its a code in the links db
+
   // inject our routers into their respective route files
   require('../users/userRoutes.js')(userRouter);
   require('../links/linkRoutes.js')(linkRouter);

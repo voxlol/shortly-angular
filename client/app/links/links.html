@@ -1,3 +1,10 @@
 <div id='container'>
   <!-- Your html here -->
+  <h2>LINKS!!!</h2>
+  <input type="text" placeholder="search" ng-model="search">
+  <ul>
+    <li ng-repeat="link in data.links | orderBy:'-visits' | filter:search ">
+      <h3 ng-click="redirect('/'+ link.code)">{{ link.url }}   {{ link.code }}   {{ link.visits }}</h3>
+    </li>
+  </ul>
 </div>
