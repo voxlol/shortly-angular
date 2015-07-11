@@ -3,8 +3,13 @@
   <h2>LINKS!!!</h2>
   <input type="text" placeholder="search" ng-model="search">
   <ul>
-    <li ng-repeat="link in data.links | orderBy:'-visits' | filter:search ">
-      <h3 ng-click="redirect('/'+ link.code)">{{ link.url }}   {{ link.code }}   {{ link.visits }}</h3>
+    <li ng-repeat="link in data.links | orderBy:'-visits' | filter:search " class="link" ng-click="redirect('/'+ link.code)">
+      <h3><img src="/assets/redirect_icon.png"
+          <span class="title">{{ link.title }}</span>
+          <span class="original">{{ link.url }}</span>
+          <span class="info">{{ link.code }}</span>
+          <span class="visits"><span class="count">{{ link.visits }}</span></span>
+      </h3>
     </li>
   </ul>
 </div>
