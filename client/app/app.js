@@ -15,7 +15,6 @@ angular.module('shortly', [
       templateUrl: 'app/auth/signup.html',
       controller: 'AuthController'
     })
-    // Your code here
 
     // Links Router
     .when('/links', {
@@ -26,6 +25,11 @@ angular.module('shortly', [
     .when('/shorten', {
       templateUrl: 'app/shorten/shorten.html',
       controller: 'ShortenController'
+    })
+
+    .when('/', {
+      templateUrl: 'app/auth/signin.html',
+      controller: 'AuthController'
     })
 
     .otherwise({

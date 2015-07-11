@@ -30,4 +30,8 @@ angular.module('shortly.auth', [])
 
   $scope.isAuth = Auth.isAuth;
   $scope.signout = Auth.signout;
+
+  if(Auth.isAuth()){
+    $location.path('/links')
+  }
 });
